@@ -12,6 +12,8 @@ public class Tamagotchi {
     private int hunger;
     private TamagotchiState currentState;
 
+    Game gp = new Game();
+
     //CREATE INSTANCE
     private static Tamagotchi instance;
 
@@ -33,10 +35,13 @@ public class Tamagotchi {
     // ACTIONS
     public void play(){
         this.currentState = this.currentState.play(this);
+        gp.playSFX(3);
+        
     }
 
     public void eat(){
         this.currentState = this.currentState.getFood(this);
+        gp.playSFX(4);
     }
 
     //CHANGE HUNGER VALUES

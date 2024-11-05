@@ -2,6 +2,7 @@ package main;
 import java.util.Scanner;
 
 import state.DeadState;
+import utils.SoundPlayer;
 import utils.TamagotchiHelper;
 import utils.Text;
 
@@ -10,23 +11,33 @@ public class Game {
     private Tamagotchi tamagotchi;
     private Scanner scanner;
     private Text text;
+    private SoundPlayer soundPlayer;
+    private boolean isMusicPlaying = false;
 
     public Game(){
         scanner = new Scanner(System.in);
         text = new Text();
+        soundPlayer = new SoundPlayer();
     }
 
     public void StartGame(){
+    
         text.showWelcomeScreen();
-        initializeTamagotchi();
 
+        if (!isMusicPlaying) {
+            playBackground(2); 
+            isMusicPlaying = true;
+        }
+
+        initializeTamagotchi();
         boolean gameRunning = true;
+
         while (gameRunning) {
             int option = showMenu();
             gameRunning = processGameOption(option);
-
             //CHECK IF TAMAGOTCHI DIED
             if (tamagotchi.getCurrentState() instanceof DeadState) {
+                playAndWaitSFX(1);
                 gameRunning = false;
             }
         }
@@ -47,6 +58,7 @@ public class Game {
 
             if (TamagotchiHelper.checkName(name)) {
                 tamagotchi = Tamagotchi.createTamagotchi(name); 
+                playSFX(0);
                 validName = true;   
             }else{
                 System.out.println("El nombre ingresado no es valido. ¡Intentalo de nuevo!");
@@ -78,5 +90,24 @@ public class Game {
             default -> System.out.println("La opción ingresada no es valida");
         }
         return true;
+    }
+
+    //PLAY SOUND FX
+
+    public void playSFX(int i) {
+        soundPlayer.setFile(i);
+        soundPlayer.play();
+        
+    }
+
+    public void playAndWaitSFX(int i){
+        soundPlayer.setFile(i);
+        soundPlayer.playAndWait();
+    }
+
+    public void playBackground(int i) {
+        soundPlayer.setFile(i);
+        soundPlayer.loop();;
+        
     }
 }   

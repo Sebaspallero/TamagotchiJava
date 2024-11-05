@@ -1,4 +1,4 @@
-# 🐣 Tamagotchi Life - Java Game V.1.0
+# 🐣 Tamagotchi Life - Java Game V.1.1
 
 Welcome to **Tamagotchi Life**, a fun terminal-based game where you get to take care of your own virtual pet! Your mission is to keep your Tamagotchi happy by feeding it, playing with it, and making sure it stays alive. If you neglect it too long, your Tamagotchi may die from hunger or overfeeding! 😢
 
@@ -11,6 +11,7 @@ Welcome to **Tamagotchi Life**, a fun terminal-based game where you get to take 
 - 🖥️ ASCII Art Rendering: Fun, simple visual representation of your pet in the terminal.
 - 🔄 Dynamic States: Your Tamagotchi's state changes in real-time based on how you treat it, using the State Design Pattern.
 - 🧠 Name Validation: Only valid names are accepted to ensure a great start with your Tamagotchi.
+- 🎶 `New Music:` Enjoy background music and sound effects that enhances your gameplay experience!
 
 
 ## 🎮 How to Play
@@ -31,9 +32,14 @@ This project demonstrates the use of **object-oriented programming (OOP)** princ
 
 ## 📈 Future Improvements
 
-- 🌍 Localization: Add support for multiple languages.
-- 🎨 Graphics Upgrade: Move from ASCII art to a graphical interface using JPanel or JavaFX.
-- 💾 Save/Load System: Allow players to save their Tamagotchi and return later.
+- 🌍 **Localization**: Add support for multiple languages.
+- 🎨 **Graphics Upgrade**: Move from ASCII art to a graphical interface using JPanel or JavaFX.
+- 💾 **Save/Load System**: Allow players to save their Tamagotchi and return later.
+- 🌱 **Additional States and Behaviors**: Add more complex states and behaviors to the Tamagotchi.
+- 🏆 **Level System**: Implement a leveling system to track progress and achievements.
+- 🔀 **Random Events**: Introduce random elements to make gameplay more dynamic and unpredictable.
+- 🧩 **Mini-Games**: Add fun mini-games to keep the player engaged.
+- 🤖 **Artificial Intelligence**: Enhance the Tamagotchi's behavior with basic AI for a more immersive experience.
 
 ## 📬 Contact
 

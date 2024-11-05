@@ -3,7 +3,7 @@ import main.TamagochiRenderer;
 import main.Tamagotchi;
 
 public class TamagotchiHelper {
-
+        
     public static void showHunger(Tamagotchi tamagotchi){
         System.out.println("Hambre: " + tamagotchi.getHunger());
     }
